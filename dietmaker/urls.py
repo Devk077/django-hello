@@ -18,6 +18,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("pdf//<int:appointment_id>", views.generate_pdf, name="view pdf"),
+    path("pdf/<int:appointment_id>", views.generate_pdf, name="view pdf"),
     path("", views.index, name="index"),
 ]
