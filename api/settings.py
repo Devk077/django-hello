@@ -22,10 +22,9 @@ TEMPLATES_DIR = BASE_DIR / 'templates'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-load_dotenv()
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = "django-insecure-=cldztbc4jg&xl0!x673!*v2_=p$$eu)=7*f#d0#zs$44xx-h^"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,8 +82,9 @@ WSGI_APPLICATION = 'api.wsgi.app'
 
 # DATABASES = {}
 
+key = "postgresql://dev:2zHUj-0yjGhvOvRGHlWqkw@shield-codfish-1123.j77.cockroachlabs.cloud:26257/defaultdb?sslmode=require"
 
-DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'), engine='django_cockroachdb')}
+DATABASES = {'default': dj_database_url.config(default=key, engine='django_cockroachdb')}
 
 # DATABASES = {
 #     "default": {
