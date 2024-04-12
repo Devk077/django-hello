@@ -21,7 +21,7 @@ STATIC_DIR = BASE_DIR / 'static'
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = {process.env.SECRET_KEY}
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'api.wsgi.app'
 # DATABASES = {}
 
 
-DATABASES = {'default': dj_database_url.config(default={process.env.DATABASE_URL}, engine='django_cockroachdb')}
+DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'), engine='django_cockroachdb')}
 
 # DATABASES = {
 #     "default": {
